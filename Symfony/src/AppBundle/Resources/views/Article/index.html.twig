@@ -1,0 +1,24 @@
+{% extends 'AppBundle::layout.html.twig' %}
+
+{% block title %}
+   ARTICLEs
+{% endblock %}
+
+
+
+{% block body %}
+<h1>Articles list</h1>
+    <hr>
+
+    {% for article in pagination %}
+        <h3><a href="{{ path('article_page', {id: article.id}) }}">{{ article.title }}</a></h3>
+           category: <strong>{{ article.catid.name }}</strong><br>
+        <span>{{ article.text }}</span>
+
+    {% endfor %}
+    <div class="navigation">
+        {{ knp_pagination_render(pagination) }}
+    </div>
+
+{% endblock %}
+

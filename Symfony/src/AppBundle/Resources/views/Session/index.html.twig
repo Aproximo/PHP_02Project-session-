@@ -1,0 +1,17 @@
+{% extends 'AppBundle::layout.html.twig' %}
+
+{% block title %}
+   Session
+{% endblock %}
+
+
+
+{% block body %}
+<h1>Session list</h1>
+    {% for view in session  %}
+        <p>{{ view.os }} - {{ view.browser }} <a href="{{ path('session_close', {id: view.id}) }}">close session</a></p>
+
+    {% endfor %}
+
+{% endblock %}
+

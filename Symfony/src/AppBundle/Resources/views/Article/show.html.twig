@@ -1,0 +1,10 @@
+{% extends 'AppBundle::layout.html.twig' %}
+
+{% block body %}
+<h1>{{ article.title }}</h1>
+    <p>{{ article.full_text|raw }}</p>
+{% endblock %}
+
+{% block title %}
+   ARTICLE
+{% endblock %}
